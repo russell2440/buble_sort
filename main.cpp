@@ -13,7 +13,7 @@ bool buble_pass(void){
   // Each passs does the bubbling
   unsigned int *p = input;
   unsigned int *pp = p+1;
-  for(int i = 0; i < len-2; i++, p++, pp++){
+  for(int i = 0; i < len-1; i++, p++, pp++){
     if(*p > *pp){
       unsigned int tmp = *pp;
       *pp = *p;
