@@ -29,7 +29,7 @@ bool buble_pass(void){
   return bubbled;
 }
 
-void buble_sort(void) {
+void buble_sort1(void) {
   // Sort input by running buble sort 
   // passes until all sorting us done
   if(len < 2) { // nothing to sort
@@ -38,6 +38,23 @@ void buble_sort(void) {
   bool bubbled = buble_pass();
   while(bubbled){
     bubbled = buble_pass();
+  }
+  return;
+}
+
+void buble_sort(void) {
+  // Sort input by running buble sort 
+  // passes until all sorting us done
+  for(int i = 0; i < len; i++){
+    unsigned int *p = input;
+    unsigned int *pp = p+1;
+    for(int j = 0; j < len-1; j++, p++, pp++){
+      if(*p > *pp){
+        unsigned int tmp = *pp;
+        *pp = *p;
+        *p = tmp;
+      }
+    }
   }
   return;
 }
